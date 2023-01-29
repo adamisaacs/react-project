@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './ttt.css';
 
 export default function TTT() {
     return (

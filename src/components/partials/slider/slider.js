@@ -1,5 +1,5 @@
 import React from 'react';
-import Images from '../../static/images/slider/korradog.jpg';
+import './slider.css';
 
 export default function Slider() {
     return (
@@ -22,7 +22,7 @@ class SliderComponent extends React.Component {
 
     componentDidMount() {
         const list = this.importAll(
-            require.context("../../static/images/slider", false, /\.(jpg)$/)
+            require.context("../../../static/images/slider", false, /\.(jpg)$/)
         );
 
         this.setState({
@@ -40,7 +40,7 @@ class SliderComponent extends React.Component {
                     active = "active";
                 }
                 return (
-                    <button type="button" data-bs-target="#carouselPets" data-bs-slide-to={index} key={index}
+                    <button type="button" data-bs-target="#slider" data-bs-slide-to={index} key={index}
                         className={active} aria-current="true" aria-label={ariaLabel}></button>
                 );
             })
@@ -66,19 +66,18 @@ class SliderComponent extends React.Component {
 
     render() {
         return (
-            <div id="carouselPets" className="carousel carousel-dark slide" data-bs-ride="carousel"
-                style={{ maxHeight: "600px", overflow: "hidden" }}>
+            <div id="slider" className="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div className="carousel-indicators">
                     {this.renderButtons()}
                 </div>
                 <div className="carousel-inner">
                     {this.renderImages()}
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselPets" data-bs-slide="prev">
+                <button className="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
                     <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Previous</span>
                 </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselPets" data-bs-slide="next">
+                <button className="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>

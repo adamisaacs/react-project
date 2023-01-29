@@ -1,0 +1,10 @@
+#slider {
+    max-height: 650px;
+    overflow: hidden;
+}
+
+@media all and (min-width: 1200px) {
+    #slider .carousel-inner {
+        margin-top: -50px;
+    }
+}
